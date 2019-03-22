@@ -1,0 +1,6 @@
+{
+  "appId": "com.zyx.vuetest1",
+  "appName": "vuetest1",
+  "bundledWebRuntime": false,
+  "webDir": "dist"
+}
