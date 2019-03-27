@@ -6,10 +6,12 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import MintUI from 'mint-ui';
-import 'mint-ui/lib/style.css'
-Vue.use(MintUI)
+import Vue from "vue";
+import MintUI from "mint-ui";
+import "mint-ui/lib/style.css";
+Vue.use(MintUI);
+
+import { Plugins } from "@capacitor/core";
 
 export default {
   data() {
@@ -17,11 +19,13 @@ export default {
   },
   methods: {
     handleClick1: function() {
-      MintUI.Toast("Hello world!");
+      MintUI.Toast("MintUI.Toast");
     },
-    handleClick2: function() {
-      MintUI.MessageBox('MessageBox', "Hello world!");
-    }
+    async handleClick2() {
+      await Plugins.Toast.show({
+        text: "Native Toast"
+      });
+    },
   }
 };
 </script>
@@ -30,8 +34,9 @@ export default {
 .css-flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  height: 600px;
 }
 </style>
 
