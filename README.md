@@ -16,9 +16,8 @@ $ npx cap init
 # https://capacitor.ionicframework.com/docs/basics/workflow
 $ npx cap add android
 $ npm run build
-$ npx cap open android
-$ npm run build
 $ npx cap copy
+$ npx cap open android
 ```
 
 ## Project setup
