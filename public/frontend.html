@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuetest1</title>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+<body>
+    <div id="app" class="css-flex">
+        <button @click="handleClick1">Button 1</button>
+        <input v-model="in_msg" placeholder="edit me">
+        <button @click="handleClick2">Button 2</button>
+        <textarea v-model="msg_out" rows="20" cols="30"></textarea>
+    </div>
+</body>
+
+<script>
+    
+    let vue = new Vue({
+      el: '#app',
+      data: {
+        in_msg: "",
+        msg_out: "",
+      },
+      methods: {
+        handleClick1() {
+          console.log("click 1");
+        },
+        handleClick2() {
+          this.msg_out += this.in_msg + "\n";
+        }
+      }
+    });
+</script>
+
+<style>
+.css-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+}
+</style>
+</html>
